@@ -22,7 +22,7 @@ export async function getDataFetch2() {
             throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        this.renderDataFetch(data);
+        renderDataFetch(data.data);
     } catch(error) {
         renderErrorState();
     }
@@ -63,6 +63,6 @@ const renderDataFetch = (data) => {
 
     const div = document.createElement("div");
     div.className = "item";
-    div.innerHTML = ` <img src="${data?.message}" alt="Random Dog Image">`;
+    div.innerHTML = ` <img src="${data?.results}" alt="Random Dog Image">`;
     container.appendChild(div);
 }
