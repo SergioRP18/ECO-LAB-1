@@ -7,7 +7,7 @@ export async function getDataFetch1() {
             throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        renderDataFetch(data);
+        renderDataFetch(data.results);
     } catch(error) {
         renderErrorState();
     }
@@ -22,7 +22,7 @@ export async function getDataFetch2() {
             throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        renderDataFetch(data);
+        this.renderDataFetch(data);
     } catch(error) {
         renderErrorState();
     }
@@ -37,7 +37,7 @@ export async function getDataFetch3() {
             throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        renderDataFetch(data);
+        renderDataFetch(data.data);
     } catch(error) {
         renderErrorState();
     }
@@ -45,7 +45,6 @@ export async function getDataFetch3() {
 
 const renderErrorState = () => {
     const error = document.querySelector("app-container");
-    error.innerHTML = "";
     error.innerText = "Not Found";
     console.log("Not Found");
 };
@@ -53,14 +52,17 @@ const renderErrorState = () => {
 
 const renderLoadingState = () => {
     const loading = document.querySelector("app-container");
-    loading.innerHTML = "";
     loading.innerText = "Loading...";
     console.log("Loading...");
 };
 
 
-const renderDataFetch = () => {
+const renderDataFetch = (data) => {
     const dataInfo = document.querySelector("app-container");
-    dataInfo.innerHTML = "";
     dataInfo.innerHTML = JSON.stringify(data, null, 2);
+
+    const div = document.createElement("div");
+    div.className = "item";
+    div.innerHTML = ` <img src="${data?.message}" alt="Random Dog Image">`;
+    container.appendChild(div);
 }
