@@ -44,7 +44,7 @@ export async function getDataFetch3() {
 };
 
 const renderErrorState = () => {
-    const error = document.querySelector(".app-container");
+    const error = document.querySelector("app-container");
     error.innerHTML = "";
     error.innerText = "Not Found";
     console.log("Not Found");
@@ -52,7 +52,7 @@ const renderErrorState = () => {
 
 
 const renderLoadingState = () => {
-    const loading = document.querySelector(".app-container");
+    const loading = document.querySelector("app-container");
     loading.innerHTML = "";
     loading.innerText = "Loading...";
     console.log("Loading...");
@@ -60,11 +60,7 @@ const renderLoadingState = () => {
 
 
 const renderDataFetch = () => {
-    const dataInfo = document.querySelector(".app-container");
+    const dataInfo = document.querySelector("app-container");
     dataInfo.innerHTML = "";
-
+    dataInfo.innerHTML = JSON.stringify(data, null, 2);
 }
-
-getDataFetch1();
-getDataFetch2();
-getDataFetch3();
