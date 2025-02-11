@@ -1,5 +1,5 @@
 export async function getDataFetch1() {
-    renderLoadingState();
+    // renderLoadingState();
 
     try {
         const response = await fetch ("https://randomuser.me/api/");
@@ -7,6 +7,8 @@ export async function getDataFetch1() {
             throw new Error("Network response was not ok");
         }
         const data = await response.json();
+        console.log('data',data);
+        
         renderDataFetch(data.results);
     } catch(error) {
         renderErrorState();
