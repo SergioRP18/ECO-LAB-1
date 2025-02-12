@@ -27,12 +27,12 @@ class AppContainer extends HTMLElement {
 
             const buttonApi2 = document.createElement("button");
             buttonApi2.innerText = "FETCH API 2";
-            buttonApi2.addEventListener("click", getDataFetch2.bind(this));
+            buttonApi2.addEventListener("click", () => getDataFetch2(this));
             section.appendChild(buttonApi2);
 
             const buttonApi3 = document.createElement("button");
             buttonApi3.innerText = "FETCH API 3";
-            buttonApi3.addEventListener("click", getDataFetch3.bind(this));
+            buttonApi3.addEventListener("click", () => getDataFetch3(this));
             section.appendChild(buttonApi3);
 
             this.dataContainer = document.createElement("div");
