@@ -42,4 +42,3 @@ class AppContainer extends HTMLElement {
 };
 
 customElements.define("app-container", AppContainer);
-export default AppContainer;

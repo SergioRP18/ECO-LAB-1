@@ -1,5 +1,5 @@
 export async function getDataFetch1() {
-    // renderLoadingState();
+    renderLoadingState();
 
     try {
         const response = await fetch ("https://randomuser.me/api/");
